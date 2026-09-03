@@ -16,7 +16,7 @@ const products = [
   {
     name: "Yago Fruits des Bois",
     type: "Gourmand & intense",
-    image: "/assets/yago-fruits-bois.jpg",
+    image: "/assets/yago-fruits-bois.png",
   },
   {
     name: "Yago Nature",
@@ -31,7 +31,7 @@ const products = [
   {
     name: "Yago Vanille",
     type: "Onctueux & gourmand",
-    image: "/assets/yago-fruits-bois.jpg",
+    image: "/assets/yago-fruits-bois.png",
   },
 ];
 

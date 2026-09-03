@@ -58,7 +58,7 @@ export default function AboutPage() {
           <Reveal direction="left">
             <div className="group relative aspect-[4/3] overflow-hidden rounded-[32px] shadow-[0_20px_50px_rgba(100,80,0,0.12)]">
               <Image
-                src="/assets/factory.jpg"
+                src="/assets/factory.png"
                 alt="Soumam"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
