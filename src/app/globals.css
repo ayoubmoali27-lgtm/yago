@@ -1,26 +1,474 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+  box-sizing: border-box;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  background: #ffd923;
+  color: #000;
+  font-family: var(--font-main), sans-serif;
+}
+
+.font-milky {
+  font-family: var(--font-milky), sans-serif;
+}
+
+
+/* ================================================= */
+/* PAGE LOAD - YAGO TEXT */
+/* ================================================= */
+
+.hero-yago {
+  opacity: 0;
+  animation: yagoEnter 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+}
+
+@keyframes yagoEnter {
+  from {
+    opacity: 0;
+    transform: translateX(-100px) scale(0.92);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+
+/* ================================================= */
+/* PAGE LOAD - BANANE TEXT */
+/* ================================================= */
+
+.hero-banane {
+  opacity: 0;
+  animation: bananeEnter 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+}
+
+@keyframes bananeEnter {
+  from {
+    opacity: 0;
+    transform: translateX(100px) scale(0.92);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+
+/* ================================================= */
+/* PAGE LOAD - BOTTLE */
+/* ================================================= */
+
+.hero-bottle-enter {
+  opacity: 0;
+  animation: bottleEnter 1.3s cubic-bezier(0.16, 1, 0.3, 1) 0.55s forwards;
+}
+
+@keyframes bottleEnter {
+  from {
+    opacity: 0;
+    transform: translateY(80px) scale(0.65);
+    filter: blur(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+
+/* ================================================= */
+/* CREAM BACKGROUND ENTRANCE */
+/* ================================================= */
+
+.hero-cream {
+  animation: creamEnter 1.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes creamEnter {
+  from {
+    transform: translateY(150px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+
+/* ================================================= */
+/* DECORATIONS ENTRANCE */
+/* ================================================= */
+
+.hero-decoration {
+  opacity: 0;
+  animation: decorationEnter 0.8s ease forwards;
+}
+
+.hero-delay-3 {
+  animation-delay: 0.8s;
+}
+
+.hero-delay-4 {
+  animation-delay: 1s;
+}
+
+.hero-delay-5 {
+  animation-delay: 1.2s;
+}
+
+@keyframes decorationEnter {
+  from {
+    opacity: 0;
+    scale: 0;
+  }
+
+  70% {
+    scale: 1.15;
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+
+/* ================================================= */
+/* GLOW ENTRANCE */
+/* ================================================= */
+
+.hero-glow {
+  opacity: 0;
+  animation: glowEnter 1.5s ease 0.8s forwards;
+}
+
+@keyframes glowEnter {
+  from {
+    opacity: 0;
+    scale: 0.6;
+  }
+
+  to {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+
+/* ================================================= */
+/* BOTTOM TEXT ENTRANCE */
+/* ================================================= */
+
+.hero-bottom-text {
+  opacity: 0;
+  animation: bottomTextEnter 1s ease 1.2s forwards;
+}
+
+@keyframes bottomTextEnter {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+
+/* ================================================= */
+/* SHADOW ENTRANCE */
+/* ================================================= */
+
+.hero-shadow-enter {
+  opacity: 0;
+  animation: shadowEnter 1s ease 1s forwards;
+}
+
+@keyframes shadowEnter {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+/* ================================================= */
+/* CONTINUOUS BOTTLE FLOAT */
+/* ================================================= */
+
+.yago-float {
+  animation: yagoFloat 3.8s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes yagoFloat {
+  from {
+    transform: translate3d(0, -16px, 0);
+  }
+
+  to {
+    transform: translate3d(0, 16px, 0);
+  }
+}
+
+
+/* ================================================= */
+/* CONTINUOUS BOTTLE ROTATION */
+/* ================================================= */
+
+.yago-rotate {
+  animation: yagoRotate 5.5s ease-in-out infinite alternate;
+  transform-origin: center 45%;
+  will-change: transform;
+}
+
+@keyframes yagoRotate {
+  from {
+    transform: rotate(-6deg);
+  }
+
+  to {
+    transform: rotate(7deg);
+  }
+}
+
+
+/* ================================================= */
+/* FLOATING SHADOW */
+/* ================================================= */
+
+.yago-shadow {
+  animation: yagoShadow 3.8s ease-in-out infinite alternate;
+  will-change: transform, opacity;
+}
+
+@keyframes yagoShadow {
+  from {
+    transform: translateX(-50%) scaleX(0.72);
+    opacity: 0.1;
+  }
+
+  to {
+    transform: translateX(-50%) scaleX(1);
+    opacity: 0.2;
+  }
+}
+
+
+/* ================================================= */
+/* ACCESSIBILITY */
+/* ================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-yago,
+  .hero-banane,
+  .hero-bottle-enter,
+  .hero-cream,
+  .hero-decoration,
+  .hero-glow,
+  .hero-bottom-text,
+  .hero-shadow-enter,
+  .yago-float,
+  .yago-rotate,
+  .yago-shadow {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+/* ================================================= */
+/* SCROLL REVEAL */
+/* ================================================= */
+
+.reveal {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.reveal.reveal-show {
+  visibility: visible;
+}
+
+
+/* UP */
+
+.reveal-up.reveal-show {
+  animation: revealUp 0.9s cubic-bezier(0.16, 1, 0.3, 1)
+    var(--reveal-delay, 0ms) both;
+}
+
+@keyframes revealUp {
+  0% {
+    opacity: 0;
+    transform: translateY(70px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* DOWN */
+
+.reveal-down.reveal-show {
+  animation: revealDown 0.9s cubic-bezier(0.16, 1, 0.3, 1)
+    var(--reveal-delay, 0ms) both;
+}
+
+@keyframes revealDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-70px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* LEFT */
+
+.reveal-left.reveal-show {
+  animation: revealLeft 0.9s cubic-bezier(0.16, 1, 0.3, 1)
+    var(--reveal-delay, 0ms) both;
+}
+
+@keyframes revealLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* RIGHT */
+
+.reveal-right.reveal-show {
+  animation: revealRight 0.9s cubic-bezier(0.16, 1, 0.3, 1)
+    var(--reveal-delay, 0ms) both;
+}
+
+@keyframes revealRight {
+  0% {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+/* ZOOM */
+
+.reveal-zoom.reveal-show {
+  animation: revealZoom 0.9s cubic-bezier(0.16, 1, 0.3, 1)
+    var(--reveal-delay, 0ms) both;
+}
+
+@keyframes revealZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.82);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* =============================================== */
+/* MOBILE */
+/* =============================================== */
+
+@media (max-width: 768px) {
+  @keyframes revealLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes revealRight {
+    0% {
+      opacity: 0;
+      transform: translateX(40px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes revealUp {
+    0% {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+
+/* =============================================== */
+/* ACCESSIBILITY */
+/* =============================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .reveal.reveal-show {
+    animation: none !important;
+  }
 }

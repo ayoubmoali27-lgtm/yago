@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🥛 Soummam — Yago
 
-## Getting Started
+Bienvenue sur le projet web vitrine de **Laiterie Soummam**, mettant en avant la boisson lactée iconique **Yago** et l'ensemble de la gamme de produits laitiers frais.
 
-First, run the development server:
+Conçu avec des technologies modernes pour offrir une expérience fluide, interactive et fidèle à l'identité visuelle gourmande de la marque.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## ✨ Fonctionnalités & Pages
+
+- **🏠 Page d'accueil (`/`)** :
+  - **Hero Section** : Bouteille Yago flottante en 3D avec animations fluides de lévitation et rotation continue, halo lumineux et effets de perspective.
+  - **Section À propos** : Histoire de la laiterie depuis 1993, valeurs et engagement envers la qualité.
+  - **Gamme de Produits** : Présentation interactive des saveurs phares (Banane, Grenadine, Fruits des Bois, etc.).
+  - **Section Découvrir** : Idées de recettes et immersion dans les coulisses de production.
+- **📖 Page À Propos (`/about`)** : Récit complet sur l'histoire de la laiterie, chiffres clés (+30 ans d'expertise) et vision durable.
+- **🍌 Page Produits (`/product`)** : Catalogue interactif avec filtres par catégories (Yago, Yaourts, Desserts, Boissons).
+- **🌿 Page Ingrédients (`/ingredients`)** : Origine 100% lait frais local, sélection de fruits mûris au soleil, ferments actifs et valeurs nutritionnelles.
+- **✉️ Page Contact (`/contact`)** : Formulaire de contact fonctionnel, coordonnées de l'usine à Akbou (Béjaïa), téléphone, email et horaires.
+- **🔐 Page Connexion (`/login`)** : Interface d'authentification personnalisée aux couleurs de Soummam.
+- **🧭 Navigation Dynamique** : Navbar flottante en pilule avec détection de la route active (`usePathname`), menu tiroir responsive sur mobile.
+- **🎨 Thème & Favicon** : Identité visuelle jaune Soummam (`#FFD923`), crème (`#FFF8D9`) et noir, avec favicons et icônes d'onglets personnalisés.
+
+---
+
+## 🛠️ Stack Technique
+
+- **Framework** : [Next.js 16](https://nextjs.org/) (App Router & Turbopack)
+- **UI & Rendu** : [React 19](https://react.dev/)
+- **Styles** : [Tailwind CSS v4](https://tailwindcss.com/)
+- **Typographie** : Google Fonts (`Modak` pour les titres Milky, `DM Sans` pour les textes)
+- **Animations** : CSS Keyframes & [Framer Motion](https://www.framer.com/motion/)
+
+---
+
+## 📂 Structure du Projet
+
+```text
+soumam/
+├── public/
+│   └── assets/             # Logos, visuels produits (Yago), usine et recettes
+├── src/
+│   └── app/
+│       ├── about/          # Route /about (page.js)
+│       ├── contact/        # Route /contact (page.js)
+│       ├── ingredients/    # Route /ingredients (page.js)
+│       ├── login/          # Route /login (page.js)
+│       ├── product/        # Route /product (page.js)
+│       ├── components/
+│       │   ├── About.jsx       # Section de présentation
+│       │   ├── Contact.jsx     # Pied de page & bloc contact
+│       │   ├── Explore.jsx     # Section recettes et coulisses
+│       │   ├── Hero.jsx        # Hero interactif avec bouteille flottante
+│       │   ├── NavBar.jsx      # Barre de navigation flottante
+│       │   └── Products.jsx    # Grille de présentation des produits
+│       ├── favicon.ico     # Favicon officiel Soummam
+│       ├── icon.png        # Icône d'onglet haute résolution
+│       ├── apple-icon.png  # Icône pour appareils Apple
+│       ├── globals.css     # Directives Tailwind & animations personnalisées
+│       ├── layout.js       # Layout racine, polices et métadonnées
+│       └── page.js         # Page d'accueil principale
+├── package.json
+└── README.md
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🚀 Démarrage Rapide
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Prérequis
 
-## Learn More
+- [Node.js](https://nodejs.org/) (v18 ou supérieur recommandé)
+- Gestionnaire de paquets `npm`, `yarn` ou `pnpm`
 
-To learn more about Next.js, take a look at the following resources:
+### Installation
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clonez le dépôt ou ouvrez le dossier du projet :
+   ```bash
+   cd soumam
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Installez les dépendances :
+   ```bash
+   npm install
+   ```
 
-## Deploy on Vercel
+3. Lancez le serveur de développement :
+   ```bash
+   npm run dev
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. Ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur pour visualiser le site.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📦 Scripts Disponibles
+
+- `npm run dev` : Lance l'environnement de développement avec rechargement à chaud (Turbopack).
+- `npm run build` : Compile et optimise l'application pour la production.
+- `npm run start` : Lance le serveur de production suite au build.
+- `npm run lint` : Exécute ESLint pour vérifier la qualité du code.
+
+---
+
+## 📄 Licence
+
+Projet développé pour la marque **Soummam**. Tous droits réservés.
